@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Tic Tac Toe</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	</head>
+	<body>
+		<div id='menu'>
+			<h3 id='decl'>Instructions</h3>
+			<p>Select a difficulty and a side to play, or choose to play with a friend. Changing the difficulty resets scores. Note that it is impossible to win on "Perfect".</p>
+			<div id='difficultySelector'>
+				<div id='easy' class='button' onclick="selectD(0);">
+					Easy
+				</div>
+				
+				<div id='hard' class='button selected' onclick="selectD(1);">
+					Hard
+				</div>
+				<div id='perfect' class='button' onclick="selectD(2);">
+					Perfect
+				</div>
+			</div>
+			<br>
+			
+			<div id='playerSelector'>
+				<div id='x' class='button player' onclick="selectP(1);">
+					X
+				</div>
+				
+				<div id='o' class='button player selected' onclick="selectP(0);">
+					O
+				</div>
+			</div>
+			
+			<div id='typeSelector'>
+				<div id='f' class='button player' onclick="selectT(0);">
+					Play Friend
+				</div>
+				
+				<div id='c' class='button player' onclick="selectT(1);">
+					Play Computer
+				</div>
+			</div>
+
+		</div>
+		<h2>Tic-Tac-Toe</h2>
+		<table>
+			<tr border>
+				<td class='box' id='0' onclick="make(0);"></td>
+				<td class='box' id='1' onclick="make(1);"></td>
+				<td class='box' id='2' onclick="make(2);"></td>
+			</tr>
+			<tr>
+				<td class='box' id='3' onclick="make(3);"></td>
+				<td class='box' id='4' onclick="make(4);"></td>
+				<td class='box' id='5' onclick="make(5);"></td>
+			</tr>
+			<tr>
+				<td class='box' id='6' onclick="make(6);"></td>
+				<td class='box' id='7' onclick="make(7);"></td>
+				<td class='box' id='8' onclick="make(8);"></td>
+			</tr>
+		</table>
+		<div id='scoreTracker'>
+			<div class='score' id='cwins'><span>Computer Wins</span><br>0</div>
+			<div class='score' id='ties'><span>Ties</span><br>0</div>
+			<div class='score' id='pwins'><span>Player Wins</span><br>0</div>
+		</div>
+		<script src="engine.js"></script>
+		<script src="interface.js"></script>
+		<p align='center' style='font-size: 70%;'>Made by Daniel Zhang</p>
+	</body>
+</html>
