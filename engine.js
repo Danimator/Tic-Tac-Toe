@@ -220,7 +220,7 @@ class Position {
 				return;
 			}
 			currentTurn = 1-currentTurn;
-		}, 50);
+		}, 450);
 	}
 	
 	// Negamax search
