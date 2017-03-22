@@ -32,14 +32,13 @@ function make(x){
 		}
 		document.getElementById(x).classList.add("noclick");
 		if(gameState.gameWon() != NONE){
-			scores[2] += 1;
-
-			document.getElementById("pwins").innerHTML = "<span>Player Wins</span><br>" + scores[2];
 			document.getElementById("menu").classList.add("gameDone");
 			document.getElementById("menu").style.display = "block";
 			if(playComputer){
 				document.getElementById("decl").innerHTML = "You Won!";
-			} else {
+				scores[2] += 1;
+				document.getElementById("pwins").innerHTML = "<span>Player Wins</span><br>" + scores[2];
+			} else { 
 				if(currentTurn == X){
 					document.getElementById("decl").innerHTML = "X Won!";
 				} else {
@@ -49,8 +48,10 @@ function make(x){
 			gameEnd = true;
 			return;
 		} else if(gameState.isTied()){
-			scores[1] += 1;
-			document.getElementById("ties").innerHTML = "<span>Ties</span><br>" + scores[1];
+			if(playComputer){
+				scores[1] += 1;
+				document.getElementById("ties").innerHTML = "<span>Ties</span><br>" + scores[1];
+			}
 			document.getElementById("menu").classList.add("gameDone");
 			document.getElementById("menu").style.display = "block";
 			document.getElementById("decl").innerHTML = "Tied!";
@@ -143,7 +144,8 @@ function selectT(x){
 	if(x == 1 && !playComputer){
 		document.getElementById("scoreTracker").style.display = "block";
 		playComputer = true;
-
+		gameState.turn = X;
+		currentTurn = X;
 	}
 	document.getElementById("menu").style.display = "none";
 	gameEnd = false;
