@@ -146,6 +146,11 @@ function selectT(x){
 		playComputer = true;
 		gameState.turn = X;
 		currentTurn = X;
+		if(document.getElementById("x").classList.contains("selected")){
+			playerTurn = X;
+		} else {
+			playerTurn = O;
+		}
 	}
 	document.getElementById("menu").style.display = "none";
 	gameEnd = false;
