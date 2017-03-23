@@ -51,6 +51,9 @@ p{
 	padding: 25px;
 	-webkit-transition: 0.5s all;
 	transition: 0.5s all;
+	-webkit-box-shadow: 5px 6px 19px 0px rgba(0,0,0,0.45);
+	-moz-box-shadow: 5px 6px 19px 0px rgba(0,0,0,0.45);
+	box-shadow: 5px 6px 19px 0px rgba(0,0,0,0.45);
 }
 
 .gameDone{
@@ -115,7 +118,6 @@ table{
 	border: 3px solid rgb(128,128,128);
 	border-collapse: collapse;
 	margin: auto;
-	
 }
 tr{
 	border: 1px solid black;
